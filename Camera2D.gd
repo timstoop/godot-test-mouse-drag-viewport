@@ -4,8 +4,11 @@ class_name MainCamera
 var _previousPosition: Vector2 = Vector2(0, 0)
 var _moveCamera: bool = false
 
+func _ready():
+	print("ready!")
+	set_process_input(true)
+
 func _unhandled_input(event: InputEvent):
-	print("handling!")
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
 		get_tree().set_input_as_handled()
 		if event.is_pressed():
